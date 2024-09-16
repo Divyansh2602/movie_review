@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Review App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav style="margin-bottom: 50px; background-color: gray; display: flex; height: 65px; align-items: center; justify-content: space-around;">
+    <ul>
+      <li class="nav"><a href="/">Home</a></li>
+      <li class="nav" style="float:   right"><a class="active" href="/about">About</a></li>
+      <li class="nav"><a href="/contact">Contact</a></li>
+      
+
+    </ul>
+  </nav>
+  <h1 id="H1">Movie Review & Search</h1>
+  <div class="table">
+    <form action="/search" method="POST">
+      <input type="text" name="movieName" placeholder="Search for a movie...">
+      <button id="first" type="submit">Search</button>
+    </form>
+  </div>
+
+  <% if (movies.length > 0) { %>
+    <ul>
+      <% movies.forEach(movie => { %>
+        <li>
+          <a href="/movie/<%= movie.id %>"><%= movie.title %></a>
+        </li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p style="margin-left: 50rem; margin-top: 50px; border: 4px dotted black; width: 115px; padding: 7px ;">Search A Movie</p>
+  <% } %>
+  <footer class="footer" style="margin-top: 23vh;">
+  <div class="footer__parralax">
+    <div class="footer__parralax-trees"></div>
+    <div class="footer__parralax-moto"></div>
+    <div class="footer__parralax-secondplan"></div>
+    <div class="footer__parralax-premierplan"></div>
+    <div class="footer__parralax-voiture"></div>
+</footer>
+  <script src="app.js"></script>
+</body>
+</html>
